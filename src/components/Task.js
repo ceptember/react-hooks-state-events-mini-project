@@ -1,13 +1,19 @@
 import React from "react";
 
-function Task() {
+function Task(props) {
+
+  function deleteTask (event){
+    event.target.parentNode.remove();
+  }
+
   return (
-    <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+    <div className="task" > 
+      <div className="label">{props.category}</div>
+      <div className="text">{props.text}</div>
+      <button className="delete" onClick = {deleteTask} >X</button>
     </div>
   );
 }
 
 export default Task;
+
